@@ -31,8 +31,8 @@ app.post("/api/v1/auth", (req, res) => {
   const { email, password } = req.body;
 
   if (
-    email === process.env.ADMIN_EMAIL &&
-    password === process.env.ADMIN_PASSWORD
+    email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD
+
   ) {
     const token = jwt.sign({ email }, process.env.JWT_SECRET, {
       expiresIn: process.env.JWT_EXPIRES_IN,
